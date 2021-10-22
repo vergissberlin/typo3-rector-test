@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  app:
+    image: rector-typo3-test-${TYPO3_VERSION}
+    container_name: rector-typo3-test-app-${TYPO3_VERSION}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TYPO3_VERSION: 9
+    env_file: .env
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - 144:80
+    volumes:
+      - '~/.composer/cache/:/home/.composer/cache/'
+
+  db:
+    image: mysql:5.7
+    container_name: rector-typo3-test-db-${TYPO3_VERSION}
+    env_file: .env

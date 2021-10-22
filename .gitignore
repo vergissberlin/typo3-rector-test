@@ -1,0 +1,10 @@
+/*
+
+!/bin
+!/rootfs
+!/.env
+!/.gitignore
+!/docker-compose.yml
+!/Dockerfile
+!/README.md
+

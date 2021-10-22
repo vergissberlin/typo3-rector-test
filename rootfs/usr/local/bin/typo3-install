@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo -e "ℹ\tInstalling TYPO3"
+
+# Install TYPO3 CMS
+./vendor/bin/typo3cms install:setup --no-interaction
+
+# Install introduction package
+composer require typo3/cms-introduction ^4.3.2
+
+./vendor/bin/typo3 extension:activate bootstrap_package
+./vendor/bin/typo3 extension:activate introduction
+
+# Add rector configuration
+./vendor/bin/rector init --template-type=typo3

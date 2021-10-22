@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if file exists
+if [ ! -f /var/www/html/typo3conf/LocalConfiguration.php ]; then
+	echo -e "❌\tTYPO3 CMS ist not installed.\n\tFile not found: /var/www/html/typo3conf/LocalConfiguration.php"
+    sleep 12
+    typo3-install
+else
+    echo -e "✅\tTYPO3 CMS is installed"
+fi
+
+apache2-foreground
