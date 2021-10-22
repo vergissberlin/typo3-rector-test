@@ -4,29 +4,27 @@
 
 Preinstalled TYPO3 project for testing purposes.
 
-## Installation
+## Installation & Usage
+
+Start and wait for your fresh TYPO3CMS installation with introduction package:
 
 ```bash
-docker build -t rector-typo3-test:latest .
+docker-compose up --build -d
+docker-compose logs  -f  # to see the logs
 ```
 
-## Usage
+### Rector
+
+An specific rector for TYPO3CMS was added automatically to the root directory.
+So you can run it with:
 
 ```bash
-docker run -it --rm  rector-typo3-test:latest bash
-docker run -it --rm  rector-typo3-test:latest vendor/bin/rector process --dry-run
-```
-
-## Manual usage
-
-```bash
-./bin/rector init --template-type=typo3
 ./bin/rector process public/typo3conf/ext/introduction --dry-run
 ```
 
-## Result
+#### Result
 
-```
+```diff
  16/16 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
 2 files with changes
 ====================
@@ -65,9 +63,12 @@ Applied rules:
 
 Applied rules:
  * SubstituteConstantsModeAndRequestTypeRector (https://docs.typo3.org/c/typo3/cms-core/master/en-us/Changelog/11.0/Deprecation-92947-DeprecateTYPO3_MODEAndTYPO3_REQUESTTYPEConstants.html)
-
-
                                                                                                                         
  [OK] 2 files would have changed (dry-run) by Rector                                                                    
                                                         
 ```
+
+## Use other TYPO3 versions
+
+Edit the `TYPO3_VERSION` environment variable in `.env` file.
+Abailable versions: 8,9,10,11

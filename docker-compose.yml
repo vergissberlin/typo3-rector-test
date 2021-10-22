@@ -8,14 +8,12 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        TYPO3_VERSION: 9
+        TYPO3_VERSION: ${TYPO3_VERSION}
     env_file: .env
     links:
       - db
     depends_on:
       - db
-    ports:
-      - 144:80
     volumes:
       - '~/.composer/cache/:/home/.composer/cache/'
 
