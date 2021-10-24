@@ -17,13 +17,13 @@ docker-compose logs  -f  # to see the logs
 
 table of commands:
 
-    | Command                          | Description                     |
-    |-------------------------|------------------------|
-    | `docker-compose up --build -d` | Start TYPO3CMS with introduction package. |
-    | `bin/bash` | Open bash shell in TYPO3CMS container. |
-    | `bin/typo3` | Runs *typo3* cli command in TYPO3CMS container. |
-    | `bin/typo3cms` | Runs *typo3cms* cli command in TYPO3CMS container. |
-    | `bin/rector` | Runs *rector* command in TYPO3CMS container. |
+| Command                        | Description                                        |
+| ------------------------------ | -------------------------------------------------- |
+| `docker-compose up --build -d` | Start TYPO3CMS with introduction package.          |
+| `bin/bash`                     | Open bash shell in TYPO3CMS container.             |
+| `bin/typo3`                    | Runs _typo3_ cli command in TYPO3CMS container.    |
+| `bin/typo3cms`                 | Runs _typo3cms_ cli command in TYPO3CMS container. |
+| `bin/rector`                   | Runs _rector_ command in TYPO3CMS container.       |
 
 ### Rector
 
